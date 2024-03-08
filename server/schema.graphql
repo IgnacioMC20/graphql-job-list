@@ -1,0 +1,27 @@
+type Query {
+  greeting: String
+}
+
+type Query {
+  jobs: [Job]
+}
+
+type Company {
+  id: ID!
+  name: String!
+  description: String
+}
+
+type Job {
+  """
+  The unique identifier for the job
+  """
+  id: ID! # the ! means that every author object _must_ have an id
+  title: String
+  description: String
+  company: Company
+  """
+  The __date__ the job was created. It is in ISO 8601 format. E.g. ```2024-12-31```.
+  """
+  date: String
+}
